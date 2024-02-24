@@ -44,7 +44,7 @@ app.get("/future-meals", async (req, res) => {
       .select("*")
       .from("meal")
       .where("meal_time", ">", todayDate);
-    if (futureMeals !== 0) {
+    if (futureMeals.lenght > 0) {
       res.status(200).json(futureMeals);
     }
     res
@@ -63,7 +63,7 @@ app.get("/past-meals", async (req, res) => {
       .select("*")
       .from("meal")
       .where("meal_time", "<", todayDate);
-    if (pastMeals !== 0) {
+    if (pastMeals.length > 0) {
       res.status(200).json(pastMeals);
     }
     res
@@ -79,7 +79,7 @@ app.get("/past-meals", async (req, res) => {
 app.get("/all-meals", async (req, res) => {
   try {
     const allMeals = await knex.select("*").from("meal").orderBy("id"); // Sorting by ID
-    if (allMeals !== 0) {
+    if (allMeals.length > 0) {
       res.status(200).json(allMeals);
     }
     res.status(404).send("The data you have requested for meals is not found");
@@ -97,7 +97,7 @@ app.get("/first-meal", async (req, res) => {
       .from("meal")
       .orderBy("id")
       .limit(1); // Limiting the result to just one meal
-    if (firstMeal !== 0) {
+    if (firstMeal.length > 0) {
       res.status(200).json(firstMeal);
     }
     res
@@ -119,7 +119,7 @@ app.get("/last-meal", async (req, res) => {
       .from("meal")
       .orderBy("id", "desc")
       .limit(1);
-    if (lastMeal !== 0) {
+    if (lastMeal.length > 0) {
       res.status(200).json(lastMeal);
     }
     res
