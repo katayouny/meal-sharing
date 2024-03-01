@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const knex = require("../database");
-const { get } = require("./meals");
 
-//
+//http://localhost:5000/api/reservations/contact_name
 router.get("/contact_name", async (request, response) => {
   try {
     // knex syntax for selecting things. Look up the documentation for knex for further info
