@@ -43,4 +43,4 @@ dist/
 
 .DS_Store
 
-package-lock.json
+package-lock.jsonnode_modules/
