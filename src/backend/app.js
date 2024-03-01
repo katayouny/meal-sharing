@@ -4,6 +4,8 @@ const router = express.Router();
 const path = require("path");
 
 const mealsRouter = require("./api/meals");
+const reservationsRouter = require("./api/reservations");
+
 const buildPath = path.join(__dirname, "../../dist");
 const port = process.env.PORT || 3000;
 const cors = require("cors");
@@ -11,31 +13,22 @@ const cors = require("cors");
 //to get connected to the database
 const knex = require("./database");
 
-// For week4 no need to look into this!
-// Serve the built client html
 app.use(express.static(buildPath));
 
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.urlencoded({ extended: true }));
+
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
 
 app.use(cors());
 
 router.use("/meals", mealsRouter);
+router.use("/reservations", reservationsRouter);
 
-//------------------------------------------------
-/*app.get("/my-route", (req, res) => {
-  res.send("Here you will see the Routes.");
-});
-console.log("Good, the connection to database is working");*/
-//--------------------------------------------------
+//________________________________________________
 
-// Routes
-
-//future-meals	Respond with all meals in the future (relative to the meal_time datetime)
-//respond with a collection of meals, meaning an array of objects.
-//running from http://localhost:5000/future-meals
+//-----week1-----
 
 const todayDate = new Date();
 app.get("/future-meals", async (req, res) => {
@@ -133,7 +126,7 @@ app.get("/last-meal", async (req, res) => {
   }
 });
 
-//-----------------------------------------------------
+//__________________________________________________
 
 if (process.env.API_PATH) {
   app.use(process.env.API_PATH, router);
@@ -143,7 +136,7 @@ if (process.env.API_PATH) {
 
 // for the frontend. Will first be covered in the react class
 app.use("*", (req, res) => {
-  res.sendFile(path.join(`${buildPath}/index.html`));
+  res.json({ message: "Route not found" });
 });
 
 module.exports = app;
