@@ -1,4 +1,4 @@
-import MealsList from './components/mealsList';
+import MealsList from './components/MealsList';
 import './App.css'
 
 
