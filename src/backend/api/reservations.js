@@ -2,9 +2,20 @@ const express = require("express");
 const router = express.Router();
 const knex = require("../database");
 
+//http://localhost:5000/api/reservations/contact_name
+router.get("/contact_name", async (request, response) => {
+  try {
+    // knex syntax for selecting things. Look up the documentation for knex for further info
+    const allReservations = await knex("reservation").select("contact_name");
+    response.json(allReservations);
+  } catch (error) {
+    throw error;
+  }
+});
+
 //-------------------------------------------
 
-// GET/api/reservations  - Returns all reservations (http://localhost:5000/api/reservations/)
+// GET /api/reservations  - Returns all reservations
 router.get("/", async (req, res) => {
   try {
     const allReservations = await knex.select("*").from("reservation");
