@@ -6,8 +6,6 @@ const path = require("path");
 const mealsRouter = require("./api/meals");
 const reservationsRouter = require("./api/reservations");
 const reviewsRouter = require("./api/reviews");
-
-
 const buildPath = path.join(__dirname, "../../dist");
 const port = process.env.PORT || 3000;
 const cors = require("cors");
@@ -50,7 +48,6 @@ app.get("/future-meals", async (req, res) => {
   }
 });
 
-
 //past-meals  Respond with all meals in the past (relative to the meal_time datetime)
 app.get("/past-meals", async (req, res) => {
   try {
@@ -70,7 +67,6 @@ app.get("/past-meals", async (req, res) => {
   }
 });
 
-
 //all-meals Respond with all meals sorted by ID - respond with a collection of meals, meaning an array of objects.
 app.get("/all-meals", async (req, res) => {
   try {
@@ -84,7 +80,6 @@ app.get("/all-meals", async (req, res) => {
     res.status(500).send("Error: Not able to fetch data for meals");
   }
 });
-
 
 //first-meal  Respond with the first meal (meaning with the minimum id) -respond with a single meal, meaning an object
 app.get("/first-meal", async (req, res) => {
@@ -107,7 +102,6 @@ app.get("/first-meal", async (req, res) => {
     res.status(500).send("Error: Not able to fetch data for meals");
   }
 });
-
 
 //last-meal Respond with the last meal (meaning with the maximum id)- respond with a single meal, meaning an object
 app.get("/last-meal", async (req, res) => {
