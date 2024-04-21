@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Meal from "./Meal";
-import api_url from "../api-url";
+import api_url from "../../api-url";
 
 function MealsList() {
   const [meals, setMeals] = useState([]);
@@ -23,13 +23,19 @@ function MealsList() {
         <p>Loading...</p>
       ) : (
         <div>
-          <h4 className="list-title">List of meals and prices <p style={{fontSize:"10px"}}>Hover over images for enlargement</p></h4>
-          
+          <h2 className="welcome">Welcome to Meal Sharing APP</h2>
+          <h4 className="list-title">
+            List of meals and prices{" "}
+            <p style={{ fontSize: "10px" }}>
+              Hover over images for enlargement
+            </p>
+          </h4>
+
           <div className="grid-container">
             <ul>
-            {meals.map((meal) => (
-              <Meal key={meal.id} meal={meal} />
-            ))}
+              {meals.map((meal) => (
+                <Meal key={meal.id} meal={meal} />
+              ))}
             </ul>
           </div>
         </div>
