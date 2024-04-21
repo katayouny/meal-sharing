@@ -1,7 +1,12 @@
-import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
-import MealsList from "./components/MEAL/MealsList"; 
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+} from "react-router-dom";
+import MealsList from "../MEAL/MealsList";
 // import Reservation from "./components/RESERVATION/Reservation";
-// import Review from "./components/REVIEW/Review"; 
+// import Review from "./components/REVIEW/Review";
 
 function Header() {
   return (
@@ -12,13 +17,18 @@ function Header() {
           <nav>
             <ul>
               <li>
-                <NavLink to="/meals" activeClassName="active">go to meals page</NavLink> Test one
+                <NavLink to="/meals" activeClassName="active">
+                  go to meals page
+                </NavLink>{" "}
+                Test one
               </li>
               <li>
-                {/* <NavLink to="/reservations" activeClassName="active">go to reservations form page</NavLink> */}two
+                {/* <NavLink to="/reservations" activeClassName="active">go to reservations form page</NavLink> */}
+                two
               </li>
               <li>
-                {/* <NavLink to="/reviews" activeClassName="active">go to reviews</NavLink> */}three
+                {/* <NavLink to="/reviews" activeClassName="active">go to reviews</NavLink> */}
+                three
               </li>
             </ul>
           </nav>
