@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Meal from "./Meal";
-import api_url from "../api-url";
+import api_url from "../../api-url";
 
 function MealsList() {
   const [meals, setMeals] = useState([]);
