@@ -1,0 +1,21 @@
+.title-slogan {
+  color: rgb(197, 59, 0);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px; /* Adjusts the gap between grid items */
+  }
+  
+  /* .grid-item {
+    display: inline;
+  } */
+
+  .make-enlargement {
+    font-size: 15px;
+    color:rgb(40, 0, 0)
+  }
+

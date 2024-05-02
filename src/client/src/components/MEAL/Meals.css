@@ -1,0 +1,53 @@
+.meal-card {
+    background-color: #fff6ec;
+    border: 1px solid rgb(193, 58, 13);
+    border-left-color: rgb(119, 39, 1);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* margin-top: 0; */
+    margin-bottom: 15px;
+    margin-left: auto; 
+    margin-right: auto;
+    /* width: min-content; */
+  }
+
+  .special-offer-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .description {
+    font-style: italic;
+    color: rgb(55, 0, 0);
+  }
+
+  .first-meal-image {
+    width: 150px;
+    height: 150px;
+    border: 1px;
+    border-radius: 5px;
+    border-color: rgb(144, 52, 19);
+    border-style: solid;
+    margin: auto;
+    /* Enlargement */
+    top: -50px;
+    left: -35px;
+    display: block;
+    z-index: 999;
+    cursor: pointer;
+  }
+
+  .first-meal-image:hover {
+    transform: scale(1.5);
+  }
+
+  .see-meal-and-reservation-or-review-button {
+    border: 2px;
+    border: brown;
+    border-radius: 6px;
+  }
+

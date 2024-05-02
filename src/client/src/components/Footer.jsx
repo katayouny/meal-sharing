@@ -1,11 +1,15 @@
-function Footer (){
-    return (
-        <div>
-        <p>Copy Right - All rights reservered - C 2024 </p>
-        <hr/>
-        <p>Develped by Katy </p>
-        </div>
-    );
+import "./Footer.css";
+function Footer() {
+  return (
+    <div className="footer-container">
+      <hr style={{marginTop: '50px'}}/>
+      <h6>
+      Develped by Katayoun Yousefzadeh
+        <br />
+        Hack Your Future - 2024
+      </h6>
+    </div>
+  );
 }
 
 export default Footer;

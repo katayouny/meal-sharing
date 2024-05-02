@@ -1,7 +1,8 @@
+import "./Homepage.css"
 function Homepage() {
   return (
     <div>
-      <h1>HOME PAGE - WELCOME ...</h1>
+      <h2 className="welcome">Welcome to Meal Sharing APP</h2>
     </div>
   );
 }

@@ -1,53 +1,66 @@
-import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Route,
+  RouterProvider,
+  Outlet,
+  createRoutesFromElements,
+} from "react-router-dom";
+
+// import { createContext } from "react";
 import MealsList from "./components/MEAL/MealsList";
-import Reservation from "./components/RESERVATION/Reservation";
-import Review from "./components/REVIEW/Review";
+import MealDetailsAndReservation from "./components/MEAL/MealDetailsAndReservation";
 import Homepage from "./components/Homepage";
-import NotFoundRoutePage from "./components/NotFoundRoutePage";
-import Header from "/src/components/HEADER/Header";
+import PageNotFound from "./components/PageNotFound";
+import Header from "./components/HEADER/Header";
 import Footer from "./components/Footer";
+import About from "./Pages/AboutUs";
+import Contact from "./Pages/ContactUs";
+import Review from "./components/Review/Review";
 import "./App.css";
 
-// const router = createBrowserRouter([
-//   {
-//     path: '/', element: <Root />, errorElement: <Error />, children: [
-//       { path: '/', element: <p>Home </p> },
-//       { path: '/about', element: <p>About</p> },
-//       { path: '/contact', element: <p>Contact</p> },
+// const userContext = createContext(null);
 
-//     ],
-//   },
-//   { path: '*', element: <p>Not found</p> }
-// ])
-
-// function App() {
-//   return (
-//     <div>
-//       <RouterProvider router={router} />
-//     </div>
-//   )
-// }
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route element={<Root />}>
+      <Route exact path="/" element={<Homepage />} />
+      <Route exact path="/meals" element={<MealsList />} />
+      <Route exact path="/meals/:id" element={<MealDetailsAndReservation />} />
+      <Route exact path="/meals/:id/review" element={<Review />} />
+      <Route exact path="/about" element={<About />} />
+      <Route exact path="/contact" element={<Contact />} />
+      <Route exact path="/*" element={<PageNotFound />} />
+    </Route>
+  )
+);
 
 function App() {
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] =useState(null);
   return (
     <div>
-      {/* <h2 className="welcome">Welcome to Meal Sharing APP</h2> */}
+  <RouterProvider router={router} />
+  </div>
+  );
+}
 
+function Root() {
+  return (
+    <>
+    {/* <userContext.Provider value={{ query, setQuery, loading, error, searchResult }}> */}
       <Header />
-
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Homepage />} />
-          <Route exact path="/meals" element={<MealsList />} />
-          <Route exact path="/reservations" element={<Reservation />} />
-          <Route exact path="/reviews" element={<Review />} />
-          <Route exact path="/*" element={<NotFoundRoutePage />} />
-        </Routes>
-      </Router>
-
+      <Outlet />
       <Footer />
-    </div>
+      {/* </userContext.Provider> */}
+    </>
   );
 }
 
 export default App;
+
+      /* <Route exact path="/reservations" element={<Reservation />} /> */
+      /* <Route exact path="/reviews" element={<Review />} /> */
+
+      
+// import Reservation from "./components/RESERVATION/Reservation";
+// import Review from "./components/REVIEW/Review";

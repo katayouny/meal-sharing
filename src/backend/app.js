@@ -135,7 +135,7 @@ if (process.env.API_PATH) {
 
 // for the frontend. Will first be covered in the react class
 app.use("*", (req, res) => {
-  res.json({ message: "Route not found" });
+  res.status(404).json({ message: "Route not found" });
 });
 
 
