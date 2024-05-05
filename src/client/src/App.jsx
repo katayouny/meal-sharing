@@ -61,6 +61,5 @@ export default App;
       /* <Route exact path="/reservations" element={<Reservation />} /> */
       /* <Route exact path="/reviews" element={<Review />} /> */
 
-      
 // import Reservation from "./components/RESERVATION/Reservation";
 // import Review from "./components/REVIEW/Review";

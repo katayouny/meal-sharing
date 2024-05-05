@@ -6,10 +6,9 @@ import "./Meals.css";
 function Meal({ meal }) {
   const specialMeals = ["Nugget", "Omlet"];
   return (
-    <div>
+    <div className="meal-cards-container">
       <div className="meal-card">
-        <h3>
-          {meal.title}{" "}
+        <div>
           {specialMeals.includes(meal.title) && (
             <img
               className="special-offer-image"
@@ -17,32 +16,33 @@ function Meal({ meal }) {
               alt="Special Offer"
             />
           )}
-        </h3>
-        <p className="description">{meal.description}</p>
-        <p>
-          <strong>Price: </strong>
-          <span style={{ color: "brown" }}>{meal.price} kr. </span>
-        </p>
-        <p>
+        </div>
+        <div className="meal-title">{meal.title}</div>
+        <div className="meal-description">{meal.description}</div>
+        <div>
           <img
             className="first-meal-image"
             src={meal.image_url}
             alt={meal.title}
           />
-        </p>
-        <div>
-            <Link to={`/meals/${meal.id}`}>
-              <button className="see-meal-and-reservation-or-review-button">
-                See meal details and book a seat with us
-              </button>
-            </Link>
+        </div>
+        <div className="meal-price">
+          <strong>Price: </strong>
+          <span style={{ color: "brown" }}>{meal.price} kr. </span>
         </div>
         <div>
-            <Link to={`/meals/${meal.id}/review`}> 
-              <button className="see-meal-and-reservation-or-review-button" > 
-                See meal and reviews
-              </button>
-            </Link>
+          <Link to={`/meals/${meal.id}`}>
+            <button className="see-meal-and-reservation-or-review-button">
+              See details and book a seat
+            </button>
+          </Link>
+        </div>
+        <div>
+          <Link to={`/meals/${meal.id}/review`}>
+            <button className="see-meal-and-reservation-or-review-button">
+              See meal reviews
+            </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -56,6 +56,7 @@ Meal.propTypes = {
     description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     max_reservations: PropTypes.number.isRequired,
+    image_url: PropTypes.string.isRequired,
   }).isRequired,
 };
 

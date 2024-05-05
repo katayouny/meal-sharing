@@ -1,3 +1,26 @@
 /* .reviews-button {
     cursor: auto;
 } */
+
+/* .meal-with-details-container { */
+  /* border: 1px; */
+  /* border-radius: 5px; */
+  /* border-color: rgb(144, 52, 19); */
+  /* border-style: solid; */
+  /* padding: 1% 1% 1% 1%;
+  margin: 5% 10% 5% 10%; */
+/* } */
+
+.meal-image-inside-MealItemDetails {
+  width: 45%;
+  height: 45%;
+  border: 1px;
+  border-radius: 7px;
+  border-color: rgb(144, 52, 19);
+  border-style: solid;
+  /* margin: auto; */
+}
+
+.meal-title-in-review {
+color: "#4f6a36";
+}

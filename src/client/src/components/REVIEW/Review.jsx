@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import api_url from "../../api-url";
+import { Link } from "react-router-dom";
+import GiveFeedback from "./GiveFeedback";
 import "./Review.css";
 
 function Review() {
@@ -56,13 +58,14 @@ function Review() {
 
   return (
     <div>
+      <div>
       {loading ? (
         <p>Loading...</p>
       ) : meal ? (
         <div>
-          <div className="meal-with-all-details-container">
-            <h2>{meal.title}</h2>
-            <p style={{ color: "brown" }}>
+          <div className="meal-with-details-container">
+            <h2 className="meal-title-in-review">{meal.title}</h2>
+            <p style={{ color: "#233638" }}>
               <b>{meal.description}</b>
             </p>
             <img
@@ -75,19 +78,26 @@ function Review() {
             {reviews.length > 0 ? (
               reviews.map((item) => (
                 <div key={item.id}>
-                  <p>{item.title}</p>
-                  <p>{item.description}</p>
-                  <p>{item.stars}</p>
+                  <p><strong>Review title: </strong> {item.title}</p>
+                  <p><strong>Review description: </strong> {item.description}</p>
+                  <p><strong>Stars: </strong> {item.stars} of 10</p>
                 </div>
               ))
             ) : (
-              <p>No review is available for this meal</p>
+              <p>There is no review for this meal</p>
             )}
           </div>
         </div>
       ) : (
         <h2>{error}</h2>
       )}
+<GiveFeedback/>
+      <div>
+      <Link to={`/meals/${id}`}>
+          <button className="go-to-reservation">Make a reservation</button>
+        </Link>
+      </div>
+      </div>
     </div>
   );
 }

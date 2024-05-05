@@ -10,6 +10,9 @@ function Header() {
       <div className="logo">
         <Logo />
       </div>
+      <div>
+        <p className="header-slogan">Unlock Culinary Adventures</p>
+      </div>
       {/* <div>
         <Search />
       </div> */}

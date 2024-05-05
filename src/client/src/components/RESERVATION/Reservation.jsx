@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import api_url from "../../api-url";
-// import "./App.css";
+import "./Reservation.css";
 
 function Reservation({ mealTitle }) {
   //mealTitle is comming from MealItemDetails as props
@@ -9,7 +9,7 @@ function Reservation({ mealTitle }) {
   const [reservationFormData, setReservationFormData] = useState({
     number_of_guests: "",
     meal_id: Number(id),
-    meal_title: mealTitle, //mealTitle, is getting in used by the props sending from MealItemDetails
+    meal_title: mealTitle, //mealTitle, is getting in used by the prop sending from MealItemDetails
     created_date: "",
     contact_phonenumber: "",
     contact_name: "",

@@ -1,7 +1,37 @@
-.footer-container {
-    /* margin-top: 50px;
-    margin-bottom: 1px;
-    padding-bottom: 3px; */
-    margin: auto;
-  }
+.footer-content {
+  background-color: #4c2e00;
+  color: #fff;
+  padding:0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.social-icons a {
+  color: #fff;
+  margin-right: 0px;
+}
+
+.footer-site-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.footer-site-links li {
+  display: inline;
+  margin-right: 20px;
+  font-weight: normal;
   
+}
+
+.footer-site-links li:last-child {
+  margin-right: 0;
+}
+
+.footer-site-links li a {
+  color: #fff;
+  text-decoration: none;
+}

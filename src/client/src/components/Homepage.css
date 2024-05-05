@@ -1,5 +1,31 @@
-.welcome {
-    color: rgb(139, 1, 1);
-    font-family: "Times New Roman", Times, serif;
-    font-weight: bolder;
-  }
+.homepage-slogan1 {
+  color: rgb(167, 25, 25);
+  font-family: initial;
+  font-weight: bold;
+  font-size: xxx-large;
+}
+
+.homepage-slogan2,
+.homepage-slogan2a,
+.homepage-slogan2b
+ {
+  color: rgb(4, 108, 0);
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bolder;
+  font-size: normal;
+}
+
+.homepage-slogan3 {
+  color: rgb(131, 0, 164);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.homepage-block-background{
+border-color: brown;
+  border-width: 1px;
+  background-image: url('/images/meal-card-background.png');
+  background-repeat:no-repeat;
+  border-style: solid;
+}
