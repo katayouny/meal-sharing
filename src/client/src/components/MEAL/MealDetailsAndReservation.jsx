@@ -1,4 +1,4 @@
-import MealItemDetails from "../MEAL/MealItemDetails";
+import MealItemDetails from "./MealItemDetails";
 
 function MealDetailsAndReservation() {
   return (

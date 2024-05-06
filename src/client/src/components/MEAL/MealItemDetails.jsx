@@ -2,7 +2,7 @@ import { AiFillAlert } from "react-icons/ai";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import api_url from "../../api-url";
-import Reservation from "../RESERVATION/Reservation";
+import Reservation from "../Reservation/Reservation";
 import { Link } from "react-router-dom";
 // import "../../App.css";
 
