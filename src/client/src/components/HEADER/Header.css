@@ -1,12 +1,77 @@
 .header {
-    align-items: normal;
-    display:flex;
-    flex-direction: row;
-    align-items:normal;
-    margin-top: 0;
-    padding-top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  padding: 10px 16px 0 5px;
+  margin-top: 0;
+}
+
+/* .header-slogan-p-Unlock {
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(120, 0, 0);
+  font-family: revert;
+}
+
+.header-slogan-p-Culinary {
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(100, 0, 118);
+  font-family: revert;
+}
+
+.header-slogan-p-Adventure {
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(175, 47, 0);
+  font-family: revert;
+} */
+
+.header nav ul {
+  align-items: center;
+}
+
+.header nav li {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  border-radius: 12px;
+  margin-right: 4px;
+  font-size: 14px;
+  font-style: normal;
+}
+
+.header nav a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.navbar-style {
+  list-style-type: none;
+  display: flex;
+}
+
+nav a.active {
+  color: rgb(15, 117, 176);
+  /* text-shadow: 0.4px 0.4px 0.4px rgb(13, 69, 121); */
+}
+
+.meal-sharing-app-logo {
+  width: 148px;
+  height: 80px;
+  border-width: 12px;
+  border-radius: 25%;
+  border-width: 1px;
+  border-style: solid;
+  /* border-color: chocolate; */
+  border-color: rgb(29, 151, 29);
 }
 
 .header-slogan {
-    font-size: small;
+  color: rgb(83, 36, 0);
+  font-size: 24px;
+  font-weight: bold;
+  /* font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+  font-family: cursive;
 }

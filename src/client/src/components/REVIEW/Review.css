@@ -1,26 +1,75 @@
-/* .reviews-button {
-    cursor: auto;
-} */
+.details-and-reviews-container {
+  margin: 20px;
+  padding-left: 30px;
+  width: 100%;
+}
 
-/* .meal-with-details-container { */
-  /* border: 1px; */
-  /* border-radius: 5px; */
-  /* border-color: rgb(144, 52, 19); */
-  /* border-style: solid; */
-  /* padding: 1% 1% 1% 1%;
-  margin: 5% 10% 5% 10%; */
-/* } */
+.meal-with-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgb(144, 52, 19);
+  border-radius: 5px;
+  padding: 10px 30px 10px 30px;
+  width: 25%;
+  background-color: rgba(255, 255, 255, 80%);
+}
 
 .meal-image-inside-MealItemDetails {
-  width: 45%;
+  /* width: 45%;
   height: 45%;
   border: 1px;
   border-radius: 7px;
   border-color: rgb(144, 52, 19);
-  border-style: solid;
-  /* margin: auto; */
+  border-style: solid; */
+  width: 35%;
+  /* // why width does not change? */
+  height: auto;
+  border: 1px solid rgb(144, 52, 19);
+  border-radius: 7px;
+  box-shadow: 4px 5px 14px #855b4d;
 }
 
 .meal-title-in-review {
-color: "#4f6a36";
+  color:#48751e;
+  margin-bottom: 1;
+}
+
+.meal-text-items {
+  font-size: 13px;
+  padding-top: 0;
+}
+
+.no-review-message {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(66, 0, 0);
+  margin-left: 60px;
+}
+
+.go-to-reservation-button {
+  text-decoration: none;
+  padding: 8px;
+  word-break: normal;
+  border-width: 1px;
+  border-color: rgb(112, 45, 0);
+  border-radius: 6px;
+  font-size: 11px;
+  background-color: rgb(244, 163, 58);
+}
+
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgb(144, 52, 19);
+  border-radius: 5px;
+  padding: 10px 30px 10px 30px;
+  width: 25%;
+  background-color: rgba(255, 255, 255, 80%);
+}
+
+.review-list-item{
+  font-size: 13px;
+  ;
 }

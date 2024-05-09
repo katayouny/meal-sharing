@@ -38,7 +38,7 @@ function Review() {
       if (response.ok) {
         // if data fetched successfully
         const data = await response.json();
-        setReviews(data.data); //
+        setReviews(data.data); 
         console.log("Fetched reviews data:", data.data);
         setLoading(false);
       } else {
@@ -59,44 +59,57 @@ function Review() {
   return (
     <div>
       <div>
-      {loading ? (
-        <p>Loading...</p>
-      ) : meal ? (
-        <div>
-          <div className="meal-with-details-container">
-            <h2 className="meal-title-in-review">{meal.title}</h2>
-            <p style={{ color: "#233638" }}>
-              <b>{meal.description}</b>
-            </p>
-            <img
-              className="meal-image-inside-MealItemDetails"
-              src={meal.image_url}
-              alt={meal.title}
-            />
-          </div>
-          <div>
+        {loading ? (
+          <p>Loading...</p>
+        ) : meal ? (
+          <div className="details-and-reviews-container">
+            <div className="meal-with-details-container">
+              <h2 className="meal-title-in-review">{meal.title}</h2>
+              <p className="meal-text-items">
+                <b>{meal.description}</b>
+              </p>
+              <img
+                className="meal-image-inside-MealItemDetails"
+                src={meal.image_url}
+                alt={meal.title}
+              />
+              <div>
+                <Link to={`/meals/${id}`}>
+                  <button className="go-to-reservation-button">
+                    Make a reservation
+                  </button>
+                </Link>
+              </div>
+            </div>
             {reviews.length > 0 ? (
-              reviews.map((item) => (
-                <div key={item.id}>
-                  <p><strong>Review title: </strong> {item.title}</p>
-                  <p><strong>Review description: </strong> {item.description}</p>
-                  <p><strong>Stars: </strong> {item.stars} of 10</p>
-                </div>
-              ))
+              <ul className="reviews-container">
+                {reviews.map((item) => (
+                  <li className="review-list-item" key={item.id}>
+                    <p>
+                      <strong>Review title: </strong> {item.title}
+                    </p>
+                    <p>
+                      <strong>Data: </strong> {item.created_date}
+                    </p>
+                    <p>
+                      <strong>Review description: </strong> {item.description}
+                    </p>
+                    <p>
+                      <strong>Stars: </strong> {item.stars} out of 10
+                    </p>
+                  </li>
+                ))}
+              </ul>
             ) : (
-              <p>There is no review for this meal</p>
+              <p className="no-review-message">
+                There is no review for this meal
+              </p>
             )}
+            <GiveFeedback />
           </div>
-        </div>
-      ) : (
-        <h2>{error}</h2>
-      )}
-<GiveFeedback/>
-      <div>
-      <Link to={`/meals/${id}`}>
-          <button className="go-to-reservation">Make a reservation</button>
-        </Link>
-      </div>
+        ) : (
+          <h2>{error}</h2>
+        )}
       </div>
     </div>
   );

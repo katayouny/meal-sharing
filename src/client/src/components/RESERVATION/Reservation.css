@@ -1,3 +1,39 @@
-.reservation-form-title{
-    color: rgb(8, 0, 68);
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgb(144, 52, 19);
+  border-radius: 5px;
+  padding: 10px 30px 10px 30px;
+  width: 25%;
+  background-color: rgba(255, 255, 255, 80%);
+}
+
+.reservation-form-title {
+  color: rgb(8, 0, 68);
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.filling-fiels-neccessary-message {
+  font-size: 12px;
+  color: brown;
+  margin-top: 2px;
+  font-weight: bold;
+}
+
+.form-labels {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.go-to-reviews-button {
+  text-decoration: none;
+  word-break: normal;
+  border-radius: 2%;
+  border-width: 1px;
+  border-color: rgb(112, 45, 0);
+  border-radius: 6px;
+  font-size: 11px;
+  background-color: rgb(244, 163, 58);
 }

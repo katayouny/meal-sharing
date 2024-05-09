@@ -1,8 +1,6 @@
-// import "./App.css";
-import "./Header.css"
+import "./Header.css";
 import Logo from "./Logo";
 import NavigationBar from "./NavigationBar";
-// import Search from "./Search";
 
 function Header() {
   return (
@@ -11,11 +9,8 @@ function Header() {
         <Logo />
       </div>
       <div>
-        <p className="header-slogan">Unlock Culinary Adventures</p>
+      <p className="header-slogan">Taste a new experience with us!</p>
       </div>
-      {/* <div>
-        <Search />
-      </div> */}
       <div>
         <NavigationBar />
       </div>

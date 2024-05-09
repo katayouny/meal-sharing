@@ -1,5 +1,24 @@
-.contact {
-  color: rgb(139, 1, 1);
-  font-family: "Times New Roman", Times, serif;
+.contact-us-container {
+  padding: 20px 50px 20px 50px;
+  margin: 30px 30px 20px 80px;
+  text-align: justify;
+  border-radius: 18px;
+  width: 63%;
+  background-color: rgba(255, 255, 255, 30%);
+}
+
+.contact-us-title {
+  color: rgb(78, 0, 0);
+  font-family: cursive;
   font-weight: bolder;
+  text-align: justify;
+  font-size: 26px;
+  margin: 2px 2px 2px 100px;
+}
+
+.contac-us-text-container {
+  padding: 10px 10px 10px 10px;
+  border-radius: 18px;
+  font-size: 14px;
+  margin: 5px 2px 2px 2px;
 }

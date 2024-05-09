@@ -7,15 +7,15 @@ import {
 } from "react-router-dom";
 
 // import { createContext } from "react";
-import MealsList from "./components/Meal/MealsList";
-import MealDetailsAndReservation from "./components/Meal/MealDetailsAndReservation";
-import Homepage from "./components/Homepage";
-import PageNotFound from "./components/PageNotFound";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import About from "./Pages/AboutUs";
-import Contact from "./Pages/ContactUs";
-import Review from "./components/Review/Review";
+import MealsList from "./components/meal/MealsList";
+import MealDetailsAndReservation from "./components/meal/MealDetailsAndReservation";
+import Homepage from "./pages/Homepage";
+import PageNotFound from "./pages/PageNotFound";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import About from "./pages/AboutUs";
+import Contact from "./pages/ContactUs";
+import Review from "./components/review/Review";
 import "./App.css";
 
 // const userContext = createContext(null);
@@ -38,16 +38,16 @@ function App() {
   // const [loading, setLoading] = useState(true);
   // const [error, setError] =useState(null);
   return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
+    <div className="main-wrapper">
+  <RouterProvider router={router} />
+  </div>
   );
 }
 
 function Root() {
   return (
     <>
-      {/* <userContext.Provider value={{ query, setQuery, loading, error, searchResult }}> */}
+    {/* <userContext.Provider value={{ query, setQuery, loading, error, searchResult }}> */}
       <Header />
       <Outlet />
       <Footer />
@@ -58,8 +58,8 @@ function Root() {
 
 export default App;
 
-/* <Route exact path="/reservations" element={<Reservation />} /> */
-/* <Route exact path="/reviews" element={<Review />} /> */
+      /* <Route exact path="/reservations" element={<Reservation />} /> */
+      /* <Route exact path="/reviews" element={<Review />} /> */
 
 // import Reservation from "./components/RESERVATION/Reservation";
 // import Review from "./components/REVIEW/Review";

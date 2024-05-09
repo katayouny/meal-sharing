@@ -1,19 +1,51 @@
-.about-us {
-    color: rgb(139, 1, 1);
-    font-family: "Times New Roman", Times, serif;
-    font-weight: bolder;
-    text-align: justify;
-  }
+.about-us-container {
+  /* border: 1px solid #7d2600; */
+  padding: 30px;
+  margin: 30px 10px 20px 100px;
+  text-align: justify;
+  border-radius: 8px;
+  width: 57%;
+  height:auto;
+  /* background-image: url("/images/meal-app-background.jpg"); */
+  /* background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover; */
+}
 
-  .about-container {
-    border: 2px solid #7d2600;
-    padding: 20px;
-    margin: 10px;
-    text-align: justify;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 8px;
-    max-width: 70%;
-    min-width: 50%;
-  }
-  
+.about-us-title {
+  color: rgb(78, 0, 0);
+  font-family: cursive;
+  font-weight: bolder;
+  text-align: justify;
+  font-size: 26px;
+  margin: 2px 2px 2px 140px;
+}
+
+.about-us-text-container {
+  padding: 10px 40px 10px 40px;
+  background-color: rgba(255, 255, 255, 30%);
+  border-radius: 11px;
+  font-size: 14px;
+  margin: 5px 2px 2px 2px;
+}
+
+p {
+  color: rgb(29, 3, 0);
+}
+
+span {
+  font-weight: bold;
+}
+
+.s1 {
+  color: rgb(194, 52, 0);
+}
+.s2 {
+  color: rgb(157, 0, 178);
+}
+.s3 {
+  color: rgb(0, 135, 16);
+}
+.s4 {
+  color: rgb(153, 0, 48);
+}

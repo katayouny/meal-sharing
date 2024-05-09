@@ -1,3 +1,28 @@
+.feedback-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgb(144, 52, 19);
+  border-radius: 5px;
+  padding: 10px 30px 10px 30px;
+  width: 25%;
+  background-color: rgba(255, 255, 255, 80%);
+}
+
 .feedback-form-title {
-    color: rgb(8, 0, 68);
+  color: rgb(8, 0, 68);
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.filling-fiels-neccessary-message {
+  font-size: 12px;
+  color: brown;
+  margin-top: 2px;
+  font-weight: bold;
+}
+
+.form-labels {
+  font-size: 13px;
+  font-weight: bold;
 }

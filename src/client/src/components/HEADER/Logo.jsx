@@ -1,4 +1,5 @@
-import "./Logo.css";
+import "./Header.css";
+
 const Logo = function logo() {
   return (
     <div>

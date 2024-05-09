@@ -1,16 +1,22 @@
 import { Link } from "react-router-dom";
+import { FaFacebook } from "react-icons/fa";
+import { IoLogoLinkedin } from "react-icons/io5";
 import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer-content">
+    <footer className="footer-container">
       <div className="social-icons">
-        <a href="https://www.facebook.com">
-          <i className="fab fa-facebook">facebook</i>
-        </a>
-        <a href="https://www.Linkedin.com">
-          <i className="fab fa-Linkedin">Linkedin</i>
-        </a>
+        <span>
+          <a href="https://www.facebook.com">
+            <FaFacebook />
+          </a>
+        </span>
+        <span>
+          <a href="https://www.linkedin.com/in/katayoun-yousefzadeh/">
+            <IoLogoLinkedin />
+          </a>
+        </span>
       </div>
       <div>
         <ul className="footer-site-links">
@@ -28,9 +34,19 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div>
+      <div className="myname-and-copyright">
         <p>© 2024. All rights reserved.</p>
-        <p>Developed by Katayoun Yousefzadeh</p>
+        <p>
+          Developed by:{" "}
+          <b>
+            <a
+              href="mailto:k.yousefzadeh@gmail.com"
+              style={{ color: "#001d0b" }}
+            >
+              Katayoun Yousefzadeh
+            </a>
+          </b>
+        </p>
       </div>
     </footer>
   );

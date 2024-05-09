@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import api_url from "../../api-url";
-import "./GiveFeedback.css"; //?????????????
+import "./GiveFeedback.css";
 
 function GiveFeedback() {
   const { id } = useParams();
@@ -83,17 +83,18 @@ function GiveFeedback() {
   };
 
   return (
-    <div>
+    <div className="feedback-form-container">
       <h3 className="feedback-form-title">
         Do you like to share your experince with us?
       </h3>
-      <p style={{ fontSize: "12px", color: "brown" }}>
-        Filling all fields is neccessary to send your feedback
+      <p className="filling-fiels-neccessary-message">
+      Filling all fields is neccessary to send your feedback
       </p>
-
       <form method="post" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="feedbackTitle">Title: </label>
+        <div className="form-group">
+          <label className="form-labels" htmlFor="feedbackTitle">
+            Title:{" "}
+          </label>
           <input
             type="text"
             name="title"
@@ -104,8 +105,10 @@ function GiveFeedback() {
             value={feedbackFormData.title}
           />
         </div>
-        <div>
-          <label htmlFor="idea">Your idea: </label>
+        <div className="form-group">
+          <label className="form-labels" htmlFor="idea">
+            Your idea:{" "}
+          </label>
           <textarea
             name="description"
             id="idea"
@@ -115,8 +118,10 @@ function GiveFeedback() {
             required
           ></textarea>
         </div>
-        <div>
-          <label htmlFor="givenStars">Stars: </label>
+        <div className="form-group">
+          <label className="form-labels" htmlFor="givenStars">
+            Stars:{" "}
+          </label>
           <select
             name="stars"
             id="givenStars"
@@ -132,8 +137,10 @@ function GiveFeedback() {
             ))}
           </select>
         </div>
-        <div>
-          <label htmlFor="creationDate">Creation date: </label>
+        <div className="form-group">
+          <label className="form-labels" htmlFor="creationDate">
+            Creation date:{" "}
+          </label>
           <input
             type="date"
             name="created_date"

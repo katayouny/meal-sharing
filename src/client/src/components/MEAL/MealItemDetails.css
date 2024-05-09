@@ -1,59 +1,54 @@
-/* // //.meal-container {
-    //   display: flex;
-    //   flex-direction: row;
-    // }
-    
-    // .meal-details {
-    //   display: inline-block;
-    // }
-    
-    // .reservation-section,
-    // .review-section {
-    //   display: inline-block;
-    // }
-     */
+.details-and-reservation-container {
+  margin: 20px;
+  padding-left: 30px;
+  width:100%;
+}
 
 .meal-with-all-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgb(144, 52, 19);
   border-radius: 5px;
-  border-color: rgb(144, 52, 19);
-  border-style: solid;
-  padding: 1% 1% 1% 1%;
-  /* margin: 5% 10% 5% 10%; */
+  padding: 15px 30px 15px 30px;
+  width: 25%;
+  background-color: rgba(255, 255, 255, 80%);
 }
 
-/* .text-items {
-  margin-bottom: 2px;
-} */
+.meal-title {
+  /* color: #200700; */
+  color:#48751e;
+  margin-bottom: 1;
+}
+
+.meal-text-items {
+  font-size: 13px;
+  padding-top: 0;
+}
 
 .meal-image-inside-MealItemDetails {
-  width: 45%;
-  height: 45%;
-  border: 1px;
+  width: 35%;
+  /* // why width does not change? */
+  height: auto;
+  border: 1px solid rgb(144, 52, 19);
   border-radius: 7px;
-  border-color: rgb(144, 52, 19);
-  border-style: solid;
-  /* margin: auto; */
-  max-width: 100%;
+  box-shadow: 4px 5px 14px #855b4d;
 }
 
-
-
-/* If you want to reduce the button size */
-.go-to-review-button {
-  /* display:inline; */
-  display: flex;
+.go-to-reviews-button {
+  text-decoration: none;
+  padding: 8px;
   word-break: normal;
-  border-radius: 2%;
   border-width: 1px;
   border-color: rgb(112, 45, 0);
   border-radius: 6px;
-  font-size: 5px;
-  font: normal;
-  font-style: normal;
-  padding: 2%;
-  font-size: small;
-  margin: 4% auto 4% auto;
-  background-color: rgb(255, 234, 215);
-  /* background-image: url("images/meal-app-background.jpg");
-  background-position: left; */
+  font-size: 11px;
+  background-color: rgb(244, 163, 58);
+}
+
+.no-reservation-availabele-message {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(184, 0, 0);
+  margin-left: 60px;
 }

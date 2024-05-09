@@ -93,15 +93,14 @@ function Reservation({ mealTitle }) {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <h3 className="reservation-form-title">Make your seat reservation</h3>
-      <p style={{ fontSize: "12px", color: "brown" }}>
+      <p className="filling-fiels-neccessary-message">
         Filling all fields is neccessary to make a reservation
       </p>
-
       <form method="post" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Name: </label>
+          <label className="form-labels" htmlFor="name">Name: </label>
           <input
             type="text"
             name="contact_name"
@@ -113,7 +112,7 @@ function Reservation({ mealTitle }) {
           />
         </div>
         <div>
-          <label htmlFor="email">Email: </label>
+          <label className="form-labels" htmlFor="email">Email: </label>
           <input
             type="email" //I have text type in database >>> ???
             name="contact_email"
@@ -125,7 +124,7 @@ function Reservation({ mealTitle }) {
           />
         </div>
         <div>
-          <label htmlFor="phoneNumber">Phone Number: </label>
+          <label className="form-labels" htmlFor="phoneNumber">Phone Number: </label>
           <input
             type="tel" //I have text type in database  >>>  ???
             name="contact_phonenumber"
@@ -140,7 +139,7 @@ function Reservation({ mealTitle }) {
           )} */}
         </div>
         <div>
-          <label htmlFor="creationDate">Creation date: </label>
+          <label className="form-labels" htmlFor="creationDate">Creation date: </label>
           <input
             type="date"
             name="created_date"
@@ -151,7 +150,7 @@ function Reservation({ mealTitle }) {
           />
         </div>
         <div>
-          <label htmlFor="numberOfGuests">Number of guests: </label>
+          <label className="form-labels" htmlFor="numberOfGuests">Number of guests: </label>
           <input
             type="text"
             name="number_of_guests"
@@ -163,7 +162,7 @@ function Reservation({ mealTitle }) {
             pattern="[0-9]*"
           />
         </div>
-        <input type="submit" value="Make Reservation" />
+        <input className="reservation-button" type="submit" value="Make Reservation" />
       </form>
     </div>
   );
