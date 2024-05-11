@@ -1,4 +1,4 @@
-.details-and-reviews-container {
+.main-container {
   margin: 20px;
   padding-left: 30px;
   width: 100%;
@@ -31,8 +31,8 @@
 }
 
 .meal-title-in-review {
-  color:#48751e;
-  margin-bottom: 1;
+  color: #48751e;
+  margin-bottom: 1px;
 }
 
 .meal-text-items {
@@ -56,6 +56,7 @@
   border-radius: 6px;
   font-size: 11px;
   background-color: rgb(244, 163, 58);
+  margin-top: 10px;
 }
 
 .reviews-container {
@@ -69,7 +70,6 @@
   background-color: rgba(255, 255, 255, 80%);
 }
 
-.review-list-item{
+.review-list-item {
   font-size: 13px;
-  ;
 }

@@ -62,9 +62,9 @@ function Review() {
         {loading ? (
           <p>Loading...</p>
         ) : meal ? (
-          <div className="details-and-reviews-container">
+          <div className="main-container">
             <div className="meal-with-details-container">
-              <h2 className="meal-title-in-review">{meal.title}</h2>
+              <h3 className="meal-title-in-review">{meal.title}</h3>
               <p className="meal-text-items">
                 <b>{meal.description}</b>
               </p>
@@ -89,7 +89,11 @@ function Review() {
                       <strong>Review title: </strong> {item.title}
                     </p>
                     <p>
-                      <strong>Data: </strong> {item.created_date}
+                      <strong>Date: </strong> {new Date(item.created_date).toLocaleDateString("en-GB", {
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                })}
                     </p>
                     <p>
                       <strong>Review description: </strong> {item.description}

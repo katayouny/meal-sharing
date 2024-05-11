@@ -55,7 +55,7 @@
   padding: 4px;
   margin: 4% auto 4% auto;
   /* background-color: rgb(255, 234, 215); */
-  text-decoration-style: none;
+  text-decoration: none;
 }
 
 /* .meal-card {

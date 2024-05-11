@@ -1,7 +1,7 @@
-.details-and-reservation-container {
+.main-container {
   margin: 20px;
   padding-left: 30px;
-  width:100%;
+  width: 100%;
 }
 
 .meal-with-all-details-container {
@@ -17,8 +17,8 @@
 
 .meal-title {
   /* color: #200700; */
-  color:#48751e;
-  margin-bottom: 1;
+  color: #48751e;
+  margin-bottom: 1px;
 }
 
 .meal-text-items {

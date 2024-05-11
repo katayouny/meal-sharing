@@ -63,7 +63,7 @@ function MealItemDetails() {
       {loading ? (
         <p>Loading...</p>
       ) : meal ? (
-        <div className="details-and-reservation-container">
+        <div className="main-container">
           <div className="meal-with-all-details-container">
               <h3 className="meal-title">{meal.title}</h3>
               <p className="meal-text-items">

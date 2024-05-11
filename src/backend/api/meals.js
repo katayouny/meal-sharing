@@ -207,7 +207,13 @@ router.get("/:id/reviews", async (req, res) => {
   try {
     if (id) {
       const result = await knex
-        .select("review.title", "review.id", "review.stars", "review.description")
+        .select(
+          "review.title",
+          "review.id",
+          "review.stars",
+          "review.description",
+          "review.created_date"
+        )
         .from("review")
         .join("meal", "meal.id", "=", "review.meal_id")
         .where("meal.id", "=", id);
@@ -373,8 +379,10 @@ router.get("/:id/reservations", async (req, res) => {
         .sum("number_of_guests as totalGuests")
         .first();
 
-      const numberOfSeatsLeft = mealWithAvailableReservations.max_reservations - (totalGuests.totalGuests || 0);
-      
+      const numberOfSeatsLeft =
+        mealWithAvailableReservations.max_reservations -
+        (totalGuests.totalGuests || 0);
+
       if (numberOfSeatsLeft >= 0) {
         console.log("Seats left: ", numberOfSeatsLeft);
         res.status(200).json({ numberOfSeatsLeft });
@@ -387,7 +395,8 @@ router.get("/:id/reservations", async (req, res) => {
   } catch (error) {
     console.error("Internal Server Error", error);
     res.status(500).json({
-      error: "Server Error: Unable to fetch meal reservation data. Try again later",
+      error:
+        "Server Error: Unable to fetch meal reservation data. Try again later",
     });
   }
 });
