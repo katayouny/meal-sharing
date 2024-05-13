@@ -28,12 +28,10 @@ function MealsList() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div>
-          <div className="grid-container">
-            {meals.map((meal) => (
-                <Meal meal={meal} key={meal.id} />
-            ))}
-          </div>
+        <div className="grid-container">
+          {meals.map((meal) => (
+            <Meal meal={meal} key={meal.id} />
+          ))}
         </div>
       )}
     </div>

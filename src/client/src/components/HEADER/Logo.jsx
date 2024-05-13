@@ -5,7 +5,7 @@ const Logo = function logo() {
     <div>
       <img
         className="meal-sharing-app-logo"
-        src="/images/logo/meal-sharing-logo.png"
+        src="/images/logo/Meal-Sharing-Logo-1.png"
         alt="Meal Sharing Logo"
       />
     </div>

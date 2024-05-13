@@ -7,7 +7,7 @@ import "./Review.css";
 
 function Review() {
   const { id } = useParams(); // Retrieve the ID from the URL(api-url+routh)
-  console.log(id);
+  console.log({id});
   const [meal, setMeal] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");

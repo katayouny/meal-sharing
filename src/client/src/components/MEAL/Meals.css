@@ -21,7 +21,7 @@
 }
 
 .meal-image {
-  width: 150px;
+  width: 100px;
   height: auto;
   border: 1px;
   border-radius: 5px;
@@ -90,16 +90,15 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: 0;
   margin-bottom: 15px;
-  margin-left: auto;
-  margin-right: auto;
   box-shadow: 4px 5px 14px #55382e;
   width: 100%;
+}
   /* width: min-content; */
   /* background-image: url("/images/meal-card-background.png"); */
   /* background-size: cover; */
   /* background-repeat: no-repeat; */
   /* background-color: rgba(255, 255, 255, 0.7); */
-}
+
 
 /* .meal-cards-container {
   display: flex;

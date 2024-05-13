@@ -58,14 +58,16 @@ nav a.active {
 }
 
 .meal-sharing-app-logo {
-  width: 148px;
-  height: 80px;
-  border-width: 12px;
-  border-radius: 25%;
+  width: 80px;
+  height: auto;
+  border-radius: 40%;
   border-width: 1px;
   border-style: solid;
-  /* border-color: chocolate; */
-  border-color: rgb(29, 151, 29);
+  border-color: chocolate;
+  /* border-color: rgb(29, 151, 29); */
+  background-color: rgb(255, 244, 230);
+  padding: 0;
+  margin: 0;
 }
 
 .header-slogan {
