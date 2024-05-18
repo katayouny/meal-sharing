@@ -1,15 +1,13 @@
 .about-us-container {
-  /* border: 1px solid #7d2600; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 63%;
   padding: 30px;
-  margin: 30px 10px 20px 100px;
+  margin: 19px 10px 17px 100px;
   text-align: justify;
   border-radius: 8px;
-  width: 57%;
-  height:auto;
-  /* background-image: url("/images/meal-app-background.jpg"); */
-  /* background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: cover; */
+  height: auto;
 }
 
 .about-us-title {
@@ -22,11 +20,12 @@
 }
 
 .about-us-text-container {
-  padding: 10px 40px 10px 40px;
+  padding: 10px 50px 10px 50px;
   background-color: rgba(255, 255, 255, 30%);
   border-radius: 11px;
   font-size: 14px;
   margin: 5px 2px 2px 2px;
+  width: 80%;
 }
 
 p {
@@ -48,4 +47,9 @@ span {
 }
 .s4 {
   color: rgb(153, 0, 48);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
 }

@@ -2,19 +2,6 @@ const express = require("express");
 const router = express.Router();
 const knex = require("../database");
 
-//http://localhost:5000/api/reservations/contact_name
-router.get("/contact_name", async (request, response) => {
-  try {
-    // knex syntax for selecting things. Look up the documentation for knex for further info
-    const allReservations = await knex("reservation").select("contact_name");
-    response.json(allReservations);
-  } catch (error) {
-    throw error;
-  }
-});
-
-//-------------------------------------------
-
 // GET /api/reservations  - Returns all reservations
 router.get("/", async (req, res) => {
   try {
@@ -26,6 +13,39 @@ router.get("/", async (req, res) => {
     }
   } catch (error) {
     console.error("Server Error", err);
+    res.status(500).json({ error: "Server Error: Not able to fetch data" });
+  }
+});
+
+//http://localhost:5000/api/reservations/contact_name
+router.get("/contact_name", async (request, response) => {
+  try {
+    const contactName = await knex("reservation").select("contact_name");
+    if (contactName) {
+      response.json(contactName);
+    } else {
+      res.send("The contact name was not found");
+    }
+  } catch (error) {
+    console.error("Server Error", error);
+    throw error;
+  }
+});
+
+// GET /api/reservations/:id - Returns the reservation by id
+router.get("/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const reservationByIdById = await knex
+      .select("*")
+      .from("reservation")
+      .where("id", id);
+    if (mealById) {
+      res.status(200).json(reservationByIdById);
+    } else {
+      res.status(404).send("The reservation was not found");
+    }
+  } catch (error) {
     res.status(500).json({ error: "Server Error: Not able to fetch data" });
   }
 });
@@ -46,24 +66,6 @@ router.post("/", async (req, res) => {
   } catch (err) {
     console.error("Server Error", err);
     res.status(500).send({ error: "Server Error: Not able to fetch data" });
-  }
-});
-
-// GET /api/reservations/:id - Returns the reservation by id
-router.get("/:id", async (req, res) => {
-  try {
-    const id = req.params.id;
-    const reservationByIdById = await knex
-      .select("*")
-      .from("reservation")
-      .where("id", id);
-    if (mealById) {
-      res.status(200).json(reservationByIdById);
-    } else {
-      res.status(404).send("The reservation was not found");
-    }
-  } catch (error) {
-    res.status(500).json({ error: "Server Error: Not able to fetch data" });
   }
 });
 

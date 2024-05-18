@@ -32,7 +32,7 @@ function MealItemDetails() {
     }
   };
 
-  // Fetching data from the rout (meal) to ckech for seat avalability
+  // Fetching data from the rout (meal) to ckeck for seat avalability
   const fetchReservationAvailability = async () => {
     try {
       const response = await fetch(api_url(`/api/meals/${id}/reservations`));

@@ -2,15 +2,17 @@ context-container {
 display:flex;
 justify-content: center;
 align-items: center;   
-/* // ??????? 3 ? 4? */
+/* // line  3 or  4 ///////////////  ///////////////  ///////////////  */
 width: 60%;
 }
 
 .page-not-found-image {
     width:600px;
-    height:300px;
+    height:auto;
 }
 
 .not-found-message {
     color: rgb(86, 88, 63);
+    text-align: center;
+    font-size: x-large;
 }

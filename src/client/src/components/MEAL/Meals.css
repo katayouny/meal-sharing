@@ -1,3 +1,19 @@
+.meal-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid rgb(193, 58, 13);
+  border-left-color: rgb(119, 39, 1);
+  border-radius: 18px;
+  box-shadow: 4px 5px 14px #55382e;
+  background-color: #fff6ec;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
 .meal-title {
   font-weight: bold;
   color: #855b4d;
@@ -37,7 +53,7 @@
 }
 
 .meal-image:hover {
-  transform: scale(1.9);
+  transform: scale(2.3);
 }
 
 .special-offer-image {
@@ -54,54 +70,6 @@
   font-size: small;
   padding: 4px;
   margin: 4% auto 4% auto;
-  /* background-color: rgb(255, 234, 215); */
+  background-color: rgb(255, 218, 185);
   text-decoration: none;
 }
-
-/* .meal-card {
-  background-color: white;
-  width: 220px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 21px;
-  padding: 15px;
-  border: 1px solid rgb(193, 58, 13);
-  border-left-color: rgb(119, 39, 1);
-  box-shadow: 4px 5px 14px #855b4d;
-} */
-
-
-.meal-card {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff6ec;
-  border: 1px solid rgb(193, 58, 13);
-  border-left-color: rgb(119, 39, 1);
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  border-radius: 18px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 0;
-  margin-bottom: 15px;
-  box-shadow: 4px 5px 14px #55382e;
-  width: 100%;
-}
-  /* width: min-content; */
-  /* background-image: url("/images/meal-card-background.png"); */
-  /* background-size: cover; */
-  /* background-repeat: no-repeat; */
-  /* background-color: rgba(255, 255, 255, 0.7); */
-
-
-/* .meal-cards-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */

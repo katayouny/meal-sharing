@@ -1,9 +1,23 @@
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
-import './Meals.css'
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import "./Meals.css";
 
 function Meal({ meal }) {
-  const specialMeals = ['Nugget', 'Omlet', 'Pasta Alfredo', 'Rød grød med fløde']
+  const specialMeals = [
+    "Nugget",
+    "Omlet",
+    "Pasta Alfredo",
+    "Rød grød med fløde",
+  ];
+
+  // Define a style object to conditionally apply background image to meal card component
+  // based on whether the meal is a special offer.
+  const mealCardBackground = {
+    backgroundImage: specialMeals.includes(meal.title)
+      ? 'url("/images/limited-offer1.png")'
+      : 'none'
+  };
+  // style={mealCardBackground} line 22 inside div
   return (
     <div className="meal-card">
       <div>
@@ -18,15 +32,11 @@ function Meal({ meal }) {
       <div className="meal-title">{meal.title}</div>
       <div className="meal-description">{meal.description}</div>
       <div>
-        <img
-          className="meal-image"
-          src={meal.image_url}
-          alt={meal.title}
-        />
+        <img className="meal-image" src={meal.image_url} alt={meal.title} />
       </div>
       <div className="meal-price">
         <strong>Price: </strong>
-        <span style={{ color: 'brown' }}>{meal.price} kr. </span>
+        <span style={{ color: "brown" }}>{meal.price} kr. </span>
       </div>
       <div>
         <Link to={`/meals/${meal.id}`}>
@@ -43,7 +53,7 @@ function Meal({ meal }) {
         </Link>
       </div>
     </div>
-  )
+  );
 }
 
 Meal.propTypes = {
@@ -55,6 +65,6 @@ Meal.propTypes = {
     max_reservations: PropTypes.number.isRequired,
     image_url: PropTypes.string.isRequired,
   }).isRequired,
-}
+};
 
-export default Meal
+export default Meal;

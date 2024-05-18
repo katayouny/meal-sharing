@@ -6,7 +6,6 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
-// import { createContext } from "react";
 import MealsList from "./components/meal/MealsList";
 import MealDetailsAndReservation from "./components/meal/MealDetailsAndReservation";
 import Homepage from "./pages/Homepage";
@@ -16,9 +15,7 @@ import Footer from "./components/footer/Footer";
 import About from "./pages/AboutUs";
 import Contact from "./pages/ContactUs";
 import Review from "./components/review/Review";
-import "./App.css";
-
-// const userContext = createContext(null);
+// import "./App.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,31 +32,21 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] =useState(null);
   return (
     <div className="main-wrapper">
-  <RouterProvider router={router} />
-  </div>
+      <RouterProvider router={router} />
+    </div>
   );
 }
 
 function Root() {
   return (
     <>
-    {/* <userContext.Provider value={{ query, setQuery, loading, error, searchResult }}> */}
       <Header />
       <Outlet />
       <Footer />
-      {/* </userContext.Provider> */}
     </>
   );
 }
 
 export default App;
-
-      /* <Route exact path="/reservations" element={<Reservation />} /> */
-      /* <Route exact path="/reviews" element={<Review />} /> */
-
-// import Reservation from "./components/RESERVATION/Reservation";
-// import Review from "./components/REVIEW/Review";

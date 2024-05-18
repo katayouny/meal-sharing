@@ -1,7 +1,10 @@
 .main-container {
   margin: 20px;
-  padding-left: 30px;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .meal-with-all-details-container {
@@ -13,10 +16,11 @@
   padding: 15px 30px 15px 30px;
   width: 25%;
   background-color: rgba(255, 255, 255, 80%);
+  margin-right: 30px;
+  margin-bottom: 20px;
 }
 
 .meal-title {
-  /* color: #200700; */
   color: #48751e;
   margin-bottom: 1px;
 }
@@ -27,8 +31,7 @@
 }
 
 .meal-image-inside-MealItemDetails {
-  width: 35%;
-  /* // why width does not change? */
+  width: 160px;
   height: auto;
   border: 1px solid rgb(144, 52, 19);
   border-radius: 7px;
@@ -43,7 +46,7 @@
   border-color: rgb(112, 45, 0);
   border-radius: 6px;
   font-size: 11px;
-  background-color: rgb(244, 163, 58);
+  background-color: rgb(247, 168, 65);
 }
 
 .no-reservation-availabele-message {

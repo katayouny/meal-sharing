@@ -57,7 +57,6 @@ function GiveFeedback() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(feedbackFormData); // just for check
 
     try {
       const response = await fetch(api_url(`/api/reviews`), {
@@ -88,7 +87,7 @@ function GiveFeedback() {
         Do you like to share your experince with us?
       </h3>
       <p className="filling-fiels-neccessary-message">
-      Filling all fields is neccessary to send your feedback
+        Filling all fields is neccessary to send your feedback
       </p>
       <form method="post" onSubmit={handleSubmit}>
         <div className="form-group">
@@ -150,7 +149,7 @@ function GiveFeedback() {
             required
           />
         </div>
-        <input type="submit" value="Send your feedback" />
+        <input className="review-button" type="submit" value="Send your feedback" />
       </form>
     </div>
   );

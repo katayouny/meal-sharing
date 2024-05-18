@@ -1,31 +1,10 @@
 .header {
   display: flex;
   justify-content: space-around;
-  align-items:center;
+  align-items: center;
   padding: 10px 16px 0 5px;
   margin-top: 0;
 }
-
-/* .header-slogan-p-Unlock {
-  font-size: 28px;
-  font-weight: bold;
-  color: rgb(120, 0, 0);
-  font-family: revert;
-}
-
-.header-slogan-p-Culinary {
-  font-size: 28px;
-  font-weight: bold;
-  color: rgb(100, 0, 118);
-  font-family: revert;
-}
-
-.header-slogan-p-Adventure {
-  font-size: 28px;
-  font-weight: bold;
-  color: rgb(175, 47, 0);
-  font-family: revert;
-} */
 
 .header nav ul {
   align-items: center;
@@ -54,7 +33,7 @@
 
 nav a.active {
   color: rgb(15, 117, 176);
-  /* text-shadow: 0.4px 0.4px 0.4px rgb(13, 69, 121); */
+  text-shadow: 0.4px 0.4px 0.4px rgb(175, 215, 228);
 }
 
 .meal-sharing-app-logo {
@@ -63,17 +42,15 @@ nav a.active {
   border-radius: 40%;
   border-width: 1px;
   border-style: solid;
-  border-color: chocolate;
-  /* border-color: rgb(29, 151, 29); */
+  border-color: rgb(29, 151, 29);
   background-color: rgb(255, 244, 230);
   padding: 0;
   margin: 0;
 }
 
 .header-slogan {
-  color: rgb(83, 36, 0);
-  font-size: 24px;
+  color: rgb(155, 31, 0);
+  font-size: 28px;
   font-weight: bold;
-  /* font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
-  font-family: cursive;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }

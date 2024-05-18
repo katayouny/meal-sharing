@@ -7,7 +7,7 @@ import "./Review.css";
 
 function Review() {
   const { id } = useParams(); // Retrieve the ID from the URL(api-url+routh)
-  console.log({id});
+  console.log({ id });
   const [meal, setMeal] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -26,7 +26,7 @@ function Review() {
       }
     } catch (error) {
       console.error("Error fetching meal details:", error);
-      setError("The meal does not exist"); // ??????????????????
+      setError("The meal does not exist");
       setLoading(false);
     }
   };
@@ -38,7 +38,7 @@ function Review() {
       if (response.ok) {
         // if data fetched successfully
         const data = await response.json();
-        setReviews(data.data); 
+        setReviews(data.data);
         console.log("Fetched reviews data:", data.data);
         setLoading(false);
       } else {
@@ -89,11 +89,12 @@ function Review() {
                       <strong>Review title: </strong> {item.title}
                     </p>
                     <p>
-                      <strong>Date: </strong> {new Date(item.created_date).toLocaleDateString("en-GB", {
-                  day: "2-digit",
-                  month: "2-digit",
-                  year: "numeric",
-                })}
+                      <strong>Date: </strong>{" "}
+                      {new Date(item.created_date).toLocaleDateString("en-GB", {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                      })}
                     </p>
                     <p>
                       <strong>Review description: </strong> {item.description}
@@ -106,7 +107,7 @@ function Review() {
               </ul>
             ) : (
               <p className="no-review-message">
-                There is no review for this meal
+                No review has been given for this meal
               </p>
             )}
             <GiveFeedback />
