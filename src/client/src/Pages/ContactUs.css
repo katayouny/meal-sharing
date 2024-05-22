@@ -3,12 +3,11 @@
   align-items: center;
   flex-direction: column;
   padding: 20px 50px 20px 50px;
-  margin: 25px 30px 19px 80px;
+  margin: 25px 30px 40px 80px;
   text-align: justify;
   border-radius: 18px;
   width: 63%;
   background-color: rgba(255, 255, 255, 30%);
-  height: auto;
 }
 
 .contact-us-title {

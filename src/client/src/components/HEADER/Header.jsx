@@ -10,7 +10,7 @@ function Header() {
         <Logo />
       </div>
       <div>
-        <p className="header-slogan">Taste a new experience with us!</p>
+        <p className="header-slogan">Taste a new experience with us</p>
       </div>
       <div>
         <MealSearchBar />
