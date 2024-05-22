@@ -50,13 +50,34 @@ nav a.active {
 }
 
 .header-slogan {
-  color: rgb(46, 83, 0);
+  color: rgb(105, 0, 126);
   font-size: 22px;
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-.serach-for-meal {
+.serach-for-our-meals {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
+  color: rgb(154, 64, 0);
+}
+
+.meal-serach-result-show-box {
+  border: 1px solid rgb(236, 205, 157);
+  border-radius: 7px;
+  background-color: rgba(250, 224, 192, 0.9);
+  font-size: 13px;
+  padding-left: 30px;
+  padding-right: 20px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: max-content;
+  position: fixed;
+}
+
+.search-field{
+  border: 1px solid rgb(156, 35, 35);
+  border-radius: 2px;
+  margin-left: 5px;
+  padding-left: 3px;
 }

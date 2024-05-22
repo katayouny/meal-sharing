@@ -51,16 +51,14 @@ function MealSearchBar() {
 
       <div>
         <form>
-          <label className="serach-for-meal" htmlFor="searchBar">
-            Search for meal:
-            <input
+          <label className="serach-for-our-meals" htmlFor="searchBar">
+            Search for our meals:
+            <input className="search-field"
               id="searchBar"
               type="text"
               placeholder="insert meal name"
               style={{
-                border: "1px solid rgb(3, 0, 47)",
-                marginLeft: "5px",
-                paddingLeft: "3px",
+                
               }}
               value={query}
               onChange={handleChange}
@@ -71,7 +69,7 @@ function MealSearchBar() {
         {loading && <p style={{ color: "darkblue" }}>Loading...</p>}
         {!loading && error && <p style={{ color: "brown" }}>{error}</p>}
         {!loading && mealSearchResult.length > 0 && (
-          <ul>
+          <ul className="meal-serach-result-show-box">
             {mealSearchResult.map((meal) => (
               <li key={meal.id}>{meal.title}</li>
             ))}
