@@ -12,7 +12,6 @@ function Homepage() {
           <p>Every Bite Builds Community!</p>
         </div>
       </div>
-      
     </div>
   );
 }

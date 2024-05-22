@@ -10,6 +10,15 @@
   margin-top: 26px;
 }
 
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Change layout to column */
+    justify-content: center; /* Center items vertically */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 .social-icons span {
   margin-left: 15px;
 }

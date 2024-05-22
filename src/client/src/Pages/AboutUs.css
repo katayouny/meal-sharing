@@ -2,21 +2,21 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 63%;
+  width: 62%;
   padding: 30px;
-  margin: 18px 10px 10px 100px;
-  text-align: justify;
+  margin: 0 25px 0 25px;
   border-radius: 8px;
   height: auto;
 }
 
 .about-us-title {
+  display: flex;
+  align-items: center;
   color: rgb(78, 0, 0);
   font-family: cursive;
   font-weight: bolder;
-  text-align: justify;
   font-size: 26px;
-  margin: 2px 2px 2px 140px;
+  margin: 0 25px 0 25px;
 }
 
 .about-us-text-container {

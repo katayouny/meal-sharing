@@ -3,25 +3,26 @@
   align-items: center;
   flex-direction: column;
   padding: 20px 50px 20px 50px;
-  margin: 25px 30px 40px 80px;
-  text-align: justify;
   border-radius: 18px;
   width: 63%;
   background-color: rgba(255, 255, 255, 30%);
+  height: 66vh;
+  margin:0 30px 0 30px;
 }
 
 .contact-us-title {
+  display: flex;
+  align-items: center;
   color: rgb(78, 0, 0);
   font-family: cursive;
   font-weight: bolder;
-  text-align: justify;
   font-size: 26px;
-  margin: 2px 2px 2px 100px;
+  margin: 0 auto 0 auto;
 }
 
 .contac-us-text-container {
   padding: 10px 10px 10px 10px;
   border-radius: 18px;
   font-size: 14px;
-  margin: 5px 2px 2px 2px;
+  text-align: justify;
 }
