@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import api_url from "../../api-url";
+import api_url from "../../apiurl";
 import "./GiveFeedback.css";
 
 function GiveFeedback() {
@@ -149,7 +149,11 @@ function GiveFeedback() {
             required
           />
         </div>
-        <input className="review-button" type="submit" value="Send your feedback" />
+        <input
+          className="review-button"
+          type="submit"
+          value="Send your feedback"
+        />
       </form>
     </div>
   );

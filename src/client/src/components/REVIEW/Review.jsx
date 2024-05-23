@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import api_url from "../../api-url";
+import api_url from "../../apiurl";
 import { Link } from "react-router-dom";
 import GiveFeedback from "./GiveFeedback";
 import "./Review.css";

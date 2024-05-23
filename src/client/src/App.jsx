@@ -15,7 +15,6 @@ import Footer from "./components/footer/Footer";
 import About from "./pages/AboutUs";
 import Contact from "./pages/ContactUs";
 import Review from "./components/review/Review";
-// import "./App.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -43,7 +42,7 @@ function Root() {
   return (
     <>
       <Header />
-      <Outlet />
+      <Outlet/>
       <Footer />
     </>
   );

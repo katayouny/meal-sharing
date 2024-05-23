@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import api_url from "../../api-url";
+import api_url from "../../apiurl";
 import "./Reservation.css";
 
 function Reservation({ mealTitle }) {

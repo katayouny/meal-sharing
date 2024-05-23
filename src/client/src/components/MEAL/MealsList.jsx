@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Meal from "./Meals";
-import api_url from "../../api-url";
+import api_url from "../../apiurl";
 import "./MealsList.css";
 
 function MealsList() {

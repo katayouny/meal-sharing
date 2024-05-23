@@ -34,18 +34,18 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div className="myname-and-copyright">
+      <div className="name-and-copyright">
         <p>© 2024. All rights reserved.</p>
         <p>
           Developed by:{" "}
-          <b>
+          <strong>
             <a
               href="mailto:k.yousefzadeh@gmail.com"
               style={{ color: "#001d0b" }}
             >
               Katayoun Yousefzadeh
             </a>
-          </b>
+          </strong>
         </p>
       </div>
     </footer>

@@ -1,7 +1,7 @@
 import { AiFillAlert } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import api_url from "../../api-url";
+import api_url from "../../apiurl";
 import Reservation from "../reservation/Reservation";
 import { Link } from "react-router-dom";
 import "./MealItemDetails.css";
@@ -65,15 +65,15 @@ function MealItemDetails() {
       ) : meal ? (
         <div className="main-container">
           <div className="meal-with-all-details-container">
-              <h3 className="meal-title">{meal.title}</h3>
-              <p className="meal-text-items">
-                <b>{meal.description}</b>
-              </p>
-              <img
-                className="meal-image-inside-MealItemDetails"
-                src={meal.image_url}
-                alt={meal.title}
-              />       
+            <h3 className="meal-title">{meal.title}</h3>
+            <p className="meal-text-items">
+              <b>{meal.description}</b>
+            </p>
+            <img
+              className="meal-image-inside-MealItemDetails"
+              src={meal.image_url}
+              alt={meal.title}
+            />
             <div>
               <p className="meal-text-items">
                 <b>Locations:</b> {meal.location}
@@ -111,19 +111,22 @@ function MealItemDetails() {
               </p>
             </div>
             <div>
-            <Link to={`/meals/${meal.id}/review`}>
-              <button className="go-to-reviews-button">See meal reviews</button>
-            </Link>
-          </div>
+              <Link to={`/meals/${meal.id}/review`}>
+                <button className="go-to-reviews-button">
+                  See meal reviews
+                </button>
+              </Link>
+            </div>
           </div>
           <div>
             {leftSeats > 0 ? (
               <Reservation mealTitle={meal.title} /> //mealTitle is sending to Reservation as props
             ) : (
-              <p className="no-reservation-availabele-message">No reservation available for this meal</p>
+              <p className="no-reservation-availabele-message">
+                No reservation available for this meal
+              </p>
             )}
           </div>
-          
         </div>
       ) : (
         <h2>{error}</h2>
