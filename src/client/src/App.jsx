@@ -6,19 +6,15 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
-// import { createContext } from "react";
-import MealsList from "./components/MEAL/MealsList";
-import MealDetailsAndReservation from "./components/MEAL/MealDetailsAndReservation";
-import Homepage from "./components/Homepage";
-import PageNotFound from "./components/PageNotFound";
-import Header from "./components/HEADER/Header";
-import Footer from "./components/Footer";
-import About from "./Pages/AboutUs";
-import Contact from "./Pages/ContactUs";
-import Review from "./components/Review/Review";
-import "./App.css";
-
-// const userContext = createContext(null);
+import MealsList from "./components/meal/MealsList";
+import MealDetailsAndReservation from "./components/meal/MealDetailsAndReservation";
+import Homepage from "./pages/Homepage";
+import PageNotFound from "./pages/PageNotFound";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import About from "./pages/AboutUs";
+import Contact from "./pages/ContactUs";
+import Review from "./components/review/Review";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,32 +31,21 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] =useState(null);
   return (
-    <div>
-  <RouterProvider router={router} />
-  </div>
+    <div className="main-wrapper">
+      <RouterProvider router={router} />
+    </div>
   );
 }
 
 function Root() {
   return (
     <>
-    {/* <userContext.Provider value={{ query, setQuery, loading, error, searchResult }}> */}
       <Header />
-      <Outlet />
+      <Outlet/>
       <Footer />
-      {/* </userContext.Provider> */}
     </>
   );
 }
 
 export default App;
-
-      /* <Route exact path="/reservations" element={<Reservation />} /> */
-      /* <Route exact path="/reviews" element={<Review />} /> */
-
-      
-// import Reservation from "./components/RESERVATION/Reservation";
-// import Review from "./components/REVIEW/Review";

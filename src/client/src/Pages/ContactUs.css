@@ -1,0 +1,28 @@
+.contact-us-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 40px 5px 40px;
+  border-radius: 18px;
+  width: 63%;
+  background-color: rgba(255, 255, 255, 30%);
+  height: 66vh;
+  margin: 0 30px 0 30px;
+}
+
+.contact-us-title {
+  display: flex;
+  align-items: center;
+  color: rgb(78, 0, 0);
+  font-family: cursive;
+  font-weight: bolder;
+  font-size: 26px;
+  margin: 0 auto 0 auto;
+}
+
+.contac-us-text-container {
+  padding: 5px 10px 5px 10px;
+  border-radius: 18px;
+  font-size: 14px;
+  text-align: justify;
+}

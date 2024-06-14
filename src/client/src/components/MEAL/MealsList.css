@@ -1,21 +1,8 @@
-.title-slogan {
-  color: rgb(197, 59, 0);
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px; /* Adjusts the gap between grid items */
-  }
-  
-  /* .grid-item {
-    display: inline;
-  } */
-
-  .make-enlargement {
-    font-size: 15px;
-    color:rgb(40, 0, 0)
-  }
-
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  row-gap: 20px;
+  column-gap: 20px;
+  margin: 20px 20px 100px 20px;
+  padding: 10px;
+}

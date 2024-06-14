@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const knex = require("../database");
-//------------ WEEK3 Meals Routs ---------------
+
+
+//------------ Meals Routs ---------------
 
 router.get("/", async (req, res) => {
   const {
@@ -15,8 +17,6 @@ router.get("/", async (req, res) => {
   } = req.query;
 
   let sortDir = req.query.sortDir;
-
-  // console.log({ maxPrice, availableReservations });
   const response = {};
 
   try {
@@ -45,21 +45,6 @@ router.get("/", async (req, res) => {
           knex.sum("reservation.number_of_guests")
         );
 
-      // const result = await knex
-      //   .select(
-      //     "m.id",
-      //     "m.title",
-      //     "m.max_reservations",
-      //     knex.raw("-SUM(r.number_of_guests) AS reserved"),
-      //     knex.raw(
-      //       "m.max_reservations - SUM(r.number_of_guests) AS remaining_capacity"
-      //     )
-      //   )
-      //   .from("meal as m")
-      //   .leftJoin("reservation as r", "m.id", "r.meal_id")
-      //   .groupBy("m.id")
-      //   .having(knex.raw("SUM(r.number_of_guests) < m.max_reservations"));
-
       response.data = result;
       response.status = 200;
       response.message = "Here are meals which have available spots left";
@@ -73,21 +58,6 @@ router.get("/", async (req, res) => {
           "<",
           knex.sum("reservation.number_of_guests")
         );
-
-      // result = await knex
-      //   .select(
-      //     "m.id",
-      //     "m.title",
-      //     "m.max_reservations",
-      //     knex.raw("-SUM(r.number_of_guests) AS reserved"),
-      //     knex.raw(
-      //       "m.max_reservations - SUM(r.number_of_guests) AS remaining_capacity"
-      //     )
-      //   )
-      //   .from("meal as m")
-      //   .leftJoin("reservation as r", "m.id", "r.meal_id")
-      //   .groupBy("m.id")
-      //   .having(knex.raw("SUM(r.number_of_guests) > m.max_reservations"));
 
       response.data = result;
       response.status = 200;
@@ -186,9 +156,6 @@ router.get("/", async (req, res) => {
       response.message =
         "Here are all meals, as no filter key has been provided";
     }
-
-    // console.log(response);
-
     res
       .status(response.status)
       .json({ data: response.data, message: response.message });
@@ -207,7 +174,13 @@ router.get("/:id/reviews", async (req, res) => {
   try {
     if (id) {
       const result = await knex
-        .select("review.title", "review.id", "review.stars", "review.description")
+        .select(
+          "review.title",
+          "review.id",
+          "review.stars",
+          "review.description",
+          "review.created_date"
+        )
         .from("review")
         .join("meal", "meal.id", "=", "review.meal_id")
         .where("meal.id", "=", id);
@@ -229,21 +202,6 @@ router.get("/:id/reviews", async (req, res) => {
 });
 
 //---------------------------------------------------------------------
-
-// GET /api/meals  - Returns all meals - younes: this one will not execute because of the router on line 6
-router.get("/", async (req, res) => {
-  try {
-    const allMeals = await knex.select("*").from("meal");
-    if (allMeals) {
-      res.status(200).json(allMeals);
-    } else {
-      res.status(404).send("The meals were not found");
-    }
-  } catch (error) {
-    console.error("Server Error", error);
-    res.status(500).json({ error: "Server Error: Not able to fetch data" });
-  }
-});
 
 // POST /api/meals - Adds a new meal to the database
 router.post("/", async (req, res) => {
@@ -308,53 +266,6 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-// Returns all meals that still have available spots left, if true.
-//     //If false, return meals that have no available spots left. (api/meals?availableReservations=true)
-
-//     if (availableReservations === true) {
-//       const result = await knex("meal")
-//         .select("meal.*")
-//         .innerJoin("reservation", "meal.id", "reservation.meal_id")
-//         .groupBy("meal.id")
-//         .having(
-//           "meal.max_reservations",
-//           ">",
-//           knex.sum("reservation.number_of_guests")
-//         );
-
-// Checking reservagion availability of meals  - (/api/meals/:id/reservations)
-
-// router.get("/:id/reservations", async (req, res) => {
-//   try {
-//     const id = +req.params.id;
-//     console.log(id);
-
-//     const mealsWithAvailableReservations = await knex("meal")
-//       .select("meal.*")
-//       .innerJoin("reservation", "meal.id", "reservation.meal_id")
-//       .groupBy("meal.id")
-//       .having(
-//         "meal.max_reservations",
-//         ">",
-//         knex.raw("SUM(reservation.number_of_guests)") // knex.sum("reservation.number_of_guests")
-//       );
-//     // SELECT WHERE JOIN ORDER GROUP
-
-//     if (mealsWithAvailableReservations) {
-//       console.log("Here are mealsWithAvailableReservations: ", mealsWithAvailableReservations); //
-//       res.status(200).json({ mealsWithAvailableReservations });
-//     } else {
-//       res.json({ message: "No seats left" });
-//     }
-//   } catch (error) {
-//     console.error("Internal Server Error", error);
-//     res.status(500).json({
-//       error:
-//         "Server Error: Unable to fetch meal reservation data. Try again later",
-//     });
-//   }
-// });
-
 router.get("/:id/reservations", async (req, res) => {
   try {
     const id = +req.params.id;
@@ -373,8 +284,10 @@ router.get("/:id/reservations", async (req, res) => {
         .sum("number_of_guests as totalGuests")
         .first();
 
-      const numberOfSeatsLeft = mealWithAvailableReservations.max_reservations - (totalGuests.totalGuests || 0);
-      
+      const numberOfSeatsLeft =
+        mealWithAvailableReservations.max_reservations -
+        (totalGuests.totalGuests || 0);
+
       if (numberOfSeatsLeft >= 0) {
         console.log("Seats left: ", numberOfSeatsLeft);
         res.status(200).json({ numberOfSeatsLeft });
@@ -387,7 +300,8 @@ router.get("/:id/reservations", async (req, res) => {
   } catch (error) {
     console.error("Internal Server Error", error);
     res.status(500).json({
-      error: "Server Error: Unable to fetch meal reservation data. Try again later",
+      error:
+        "Server Error: Unable to fetch meal reservation data. Try again later",
     });
   }
 });

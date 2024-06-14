@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import api_url from "../../api-url";
-// import "./App.css";
+import api_url from "../../apiurl";
+import "./Reservation.css";
 
 function Reservation({ mealTitle }) {
   //mealTitle is comming from MealItemDetails as props
@@ -9,7 +9,7 @@ function Reservation({ mealTitle }) {
   const [reservationFormData, setReservationFormData] = useState({
     number_of_guests: "",
     meal_id: Number(id),
-    meal_title: mealTitle, //mealTitle, is getting in used by the props sending from MealItemDetails
+    meal_title: mealTitle, //mealTitle, is getting in used by the passing prop from MealItemDetails
     created_date: "",
     contact_phonenumber: "",
     contact_name: "",
@@ -17,7 +17,6 @@ function Reservation({ mealTitle }) {
   });
 
   const handleChange = (e) => {
-    console.log(e.target.name);
     switch (e.target.name) {
       case "contact_name":
         setReservationFormData({
@@ -67,7 +66,6 @@ function Reservation({ mealTitle }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(reservationFormData); // just for check
 
     try {
       const response = await fetch(api_url(`/api/reservations`), {
@@ -93,15 +91,16 @@ function Reservation({ mealTitle }) {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <h3 className="reservation-form-title">Make your seat reservation</h3>
-      <p style={{ fontSize: "12px", color: "brown" }}>
+      <p className="filling-fiels-neccessary-message">
         Filling all fields is neccessary to make a reservation
       </p>
-
       <form method="post" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Name: </label>
+          <label className="form-labels" htmlFor="name">
+            Name:{" "}
+          </label>
           <input
             type="text"
             name="contact_name"
@@ -113,9 +112,11 @@ function Reservation({ mealTitle }) {
           />
         </div>
         <div>
-          <label htmlFor="email">Email: </label>
+          <label className="form-labels" htmlFor="email">
+            Email:{" "}
+          </label>
           <input
-            type="email" //I have text type in database >>> ???
+            type="email"
             name="contact_email"
             id="email"
             placeholder="name@domain.com"
@@ -125,9 +126,11 @@ function Reservation({ mealTitle }) {
           />
         </div>
         <div>
-          <label htmlFor="phoneNumber">Phone Number: </label>
+          <label className="form-labels" htmlFor="phoneNumber">
+            Phone Number:{" "}
+          </label>
           <input
-            type="tel" //I have text type in database  >>>  ???
+            type="tel"
             name="contact_phonenumber"
             id="phoneNumber"
             placeholder="+45 22332233"
@@ -135,12 +138,11 @@ function Reservation({ mealTitle }) {
             onChange={handleChange}
             required
           />
-          {/* {isNaN(reservationFormData.name) && (
-            <span style={{ color: "red" }}>Please insert a number</span>
-          )} */}
         </div>
         <div>
-          <label htmlFor="creationDate">Creation date: </label>
+          <label className="form-labels" htmlFor="creationDate">
+            Creation date:{" "}
+          </label>
           <input
             type="date"
             name="created_date"
@@ -151,7 +153,9 @@ function Reservation({ mealTitle }) {
           />
         </div>
         <div>
-          <label htmlFor="numberOfGuests">Number of guests: </label>
+          <label className="form-labels" htmlFor="numberOfGuests">
+            Number of guests:{" "}
+          </label>
           <input
             type="text"
             name="number_of_guests"
@@ -163,7 +167,11 @@ function Reservation({ mealTitle }) {
             pattern="[0-9]*"
           />
         </div>
-        <input type="submit" value="Make Reservation" />
+        <input
+          className="reservation-button"
+          type="submit"
+          value="Make Reservation"
+        />
       </form>
     </div>
   );

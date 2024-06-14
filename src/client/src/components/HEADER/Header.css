@@ -1,5 +1,94 @@
 .header {
-    align-items: normal;
-    display:flex;
-    flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 16px 10px 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Styles for mobile devices */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px; 
+  }
+}
+
+.header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header nav li {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  border-radius: 12px;
+  margin-right: 4px;
+  font-size: 14px;
+  font-style: normal;
+}
+
+.header nav a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.navbar-style {
+  list-style-type: none;
+  display: flex;
+}
+
+nav a.active {
+  color: rgb(15, 117, 176);
+  text-shadow: 0.4px 0.4px 0.4px rgb(175, 215, 228);
+}
+
+.meal-sharing-app-logo {
+  width: 80px;
+  height: auto;
+  border-radius: 40%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(29, 151, 29);
+  background-color: rgb(255, 244, 230);
+  padding: 0;
+  margin: 0;
+}
+
+.header-slogan {
+  color: rgb(105, 0, 126);
+  font-size: 22px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.serach-for-our-meals {
+  font-weight: bold;
+  font-size: 14px;
+  color: rgb(154, 64, 0);
+}
+
+.meal-serach-result-show-box {
+  border: 1px solid rgb(236, 205, 157);
+  border-radius: 7px;
+  background-color: rgba(250, 224, 192, 0.9);
+  font-size: 13px;
+  padding-left: 30px;
+  padding-right: 20px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: max-content;
+  position: fixed;
+}
+
+.search-field{
+  border: 1px solid rgb(156, 35, 35);
+  border-radius: 2px;
+  margin-left: 5px;
+  padding-left: 3px;
 }

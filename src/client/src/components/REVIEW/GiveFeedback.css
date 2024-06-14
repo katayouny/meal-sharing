@@ -1,15 +1,15 @@
-.form-container {
+.feedback-form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   border: 1px solid rgb(144, 52, 19);
-  border-radius: 5px;
-  padding: 15px 30px 15px 30px;
-  width: 100%;
+  border-radius: 7px;
+  padding: 10px 30px 10px 30px;
+  width: 25%;
   background-color: rgba(255, 255, 255, 80%);
 }
 
-.reservation-form-title {
+.feedback-form-title {
   color: rgb(8, 0, 68);
   font-size: 16px;
   margin-bottom: 0;
@@ -27,12 +27,19 @@
   font-weight: bold;
 }
 
-.reservation-button {
+.form-group textarea {
+  width: 100%;
+  resize: vertical;
+  height: 100%;
+  max-height: 100px;
+}
+
+.review-button {
   word-break: normal;
   border-radius: 1%;
   border-width: 1px;
   border-color: rgb(112, 45, 0);
-  border-radius: 6px;
+  border-radius: 7px;
   font-size: 11px;
   background-color: rgb(247, 168, 65);
   text-decoration: none;

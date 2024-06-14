@@ -1,8 +1,32 @@
-# React + Vite
+Meal Sharing App
+LINK TO THE APP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Description
+This is a full-stack web application built with Nodejs, Express.js, KnexJS, and Reactjs.
 
-Currently, two official plugins are available:
+It was created as an individual project task for Hack Your Future Denmark's curriculum.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The backend of the app was deployed using MySQL, while the frontend was deployed USING React.
+
+The main functionalities of this website are:
+
+Displaying the meals in the database
+Making a reservation
+See reviews
+Leaving a review
+
+Technologies Used
+Express.js
+KnexJS
+PostgreSQL
+React
+CSS Modules
+
+What I Learned
+During the development of this project, I faced several challenges that helped me learn new skills and technologies.
+
+Through these challenges, I was able to gain a better understanding of React, CSS Modules, and Frontend Development in general. I also learned how to work with Express.js, KnexJS, and MySQL to build a full-stack web application.
+
+In addition to these technical skills, I also learned how to manage my time effectively and prioritize tasks to meet deadlines.
+
+Overall, this project was a great learning experience for me and helped me grow as a developer.

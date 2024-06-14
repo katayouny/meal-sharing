@@ -1,13 +1,7 @@
-// import Reservation from "../RESERVATION/Reservation";
-import MealItemDetails from  "../MEAL/MealItemDetails";
-// import "./App.css";
+import MealItemDetails from '../meal/MealItemDetails';
 
 function MealDetailsAndReservation() {
-  return (
-    <div>
-        <MealItemDetails />
-    </div>
-  );
+  return <MealItemDetails />
 }
 
-export default MealDetailsAndReservation;
+export default MealDetailsAndReservation

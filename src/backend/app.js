@@ -27,7 +27,7 @@ router.use("/meals", mealsRouter);
 router.use("/reservations", reservationsRouter);
 router.use("/reviews", reviewsRouter);
 
-//_____________________ WEEKK1 ___________________________
+//______________________________________________
 
 const todayDate = new Date();
 app.get("/future-meals", async (req, res) => {

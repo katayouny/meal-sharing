@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import api_url from "../../api-url";
+import api_url from "../../apiurl";
+import { Link } from "react-router-dom";
+import GiveFeedback from "./GiveFeedback";
 import "./Review.css";
 
 function Review() {
   const { id } = useParams(); // Retrieve the ID from the URL(api-url+routh)
-  console.log(id);
+  console.log({ id });
   const [meal, setMeal] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -24,7 +26,7 @@ function Review() {
       }
     } catch (error) {
       console.error("Error fetching meal details:", error);
-      setError("The meal does not exist"); // ??????????????????
+      setError("The meal does not exist");
       setLoading(false);
     }
   };
@@ -36,7 +38,7 @@ function Review() {
       if (response.ok) {
         // if data fetched successfully
         const data = await response.json();
-        setReviews(data.data); //
+        setReviews(data.data);
         console.log("Fetched reviews data:", data.data);
         setLoading(false);
       } else {
@@ -56,38 +58,64 @@ function Review() {
 
   return (
     <div>
-      {loading ? (
-        <p>Loading...</p>
-      ) : meal ? (
-        <div>
-          <div className="meal-with-all-details-container">
-            <h2>{meal.title}</h2>
-            <p style={{ color: "brown" }}>
-              <b>{meal.description}</b>
-            </p>
-            <img
-              className="meal-image-inside-MealItemDetails"
-              src={meal.image_url}
-              alt={meal.title}
-            />
-          </div>
-          <div>
+      <div>
+        {loading ? (
+          <p>Loading...</p>
+        ) : meal ? (
+          <div className="main-container">
+            <div className="meal-with-details-container">
+              <h3 className="meal-title-in-review">{meal.title}</h3>
+              <p className="meal-text-items">
+                <b>{meal.description}</b>
+              </p>
+              <img
+                className="meal-image-inside-MealItemDetails"
+                src={meal.image_url}
+                alt={meal.title}
+              />
+              <div>
+                <Link to={`/meals/${id}`}>
+                  <button className="go-to-reservation-button">
+                    Make a reservation
+                  </button>
+                </Link>
+              </div>
+            </div>
             {reviews.length > 0 ? (
-              reviews.map((item) => (
-                <div key={item.id}>
-                  <p>{item.title}</p>
-                  <p>{item.description}</p>
-                  <p>{item.stars}</p>
-                </div>
-              ))
+              <ul className="reviews-container">
+                {reviews.map((item) => (
+                  <li className="review-list-item" key={item.id}>
+                    <p>
+                      <strong>Review title: </strong> {item.title}
+                    </p>
+                    <p>
+                      <strong>Date: </strong>{" "}
+                      {new Date(item.created_date).toLocaleDateString("en-GB", {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                      })}
+                    </p>
+                    <p>
+                      <strong>Review description: </strong> {item.description}
+                    </p>
+                    <p>
+                      <strong>Stars: </strong> {item.stars} out of 10
+                    </p>
+                  </li>
+                ))}
+              </ul>
             ) : (
-              <p>No review is available for this meal</p>
+              <p className="no-review-message">
+                No review has been given for this meal
+              </p>
             )}
+            <GiveFeedback />
           </div>
-        </div>
-      ) : (
-        <h2>{error}</h2>
-      )}
+        ) : (
+          <h2>{error}</h2>
+        )}
+      </div>
     </div>
   );
 }
