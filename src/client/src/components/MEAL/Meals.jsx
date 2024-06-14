@@ -10,7 +10,7 @@ function Meal({ meal }) {
     "Rød grød med fløde",
   ];
 
-  // Define a style object to conditionally apply background image to meal card component
+  // Define a style object to conditionally apply background image to meal card component,
   // based on whether the meal is a special offer.
   const mealCardBackground = {
     backgroundImage: specialMeals.includes(meal.title)

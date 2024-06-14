@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const knex = require("../database");
-//------------ WEEK3 Meals Routs ---------------
+
+
+//------------ Meals Routs ---------------
 
 router.get("/", async (req, res) => {
   const {
@@ -200,21 +202,6 @@ router.get("/:id/reviews", async (req, res) => {
 });
 
 //---------------------------------------------------------------------
-
-// GET /api/meals  - Returns all meals - this one will not execute because of the router on line 6
-// router.get("/", async (req, res) => {
-//   try {
-//     const allMeals = await knex.select("*").from("meal");
-//     if (allMeals) {
-//       res.status(200).json(allMeals);
-//     } else {
-//       res.status(404).send("The meals were not found");
-//     }
-//   } catch (error) {
-//     console.error("Server Error", error);
-//     res.status(500).json({ error: "Server Error: Not able to fetch data" });
-//   }
-// });
 
 // POST /api/meals - Adds a new meal to the database
 router.post("/", async (req, res) => {
